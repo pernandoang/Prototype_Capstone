@@ -10,7 +10,7 @@ label start:
 
 
 label prolog_pertama:
-    "[text_prolog[1]]" with dissolve
+    "{b}Someone{/b}" "[text_prolog[1]]" with dissolve
     "[text_prolog[2]]" with dissolve
     "[text_prolog[3]]" with dissolve
     "[text_prolog[4]]" with dissolve
