@@ -10,8 +10,11 @@ label start:
 
 
 label prolog_pertama:
-    "{b}Someone{/b}" "[text_prolog[1]]" with dissolve
-    "[text_prolog[2]]" with dissolve
-    "[text_prolog[3]]" with dissolve
-    "[text_prolog[4]]" with dissolve
-    return
+    scene envi_mom:
+        xsize 1920
+        ysize 1080
+    show larasati_ll at left:
+        xsize 600
+        ysize 750
+        yalign 0.5
+    larasati "[text_prolog_larasati[0]]"
