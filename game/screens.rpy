@@ -483,9 +483,13 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
 
     use navigation
 
-    textbutton _("Return"):
-        style "return_button"
+    # textbutton _("Return"):
+    #     style "return_button"
 
+    #     action [Return(),SetVariable("buttonstatus",True)]
+    imagebutton:
+        style "return_button"
+        auto "imagebtn/ButtonReturn_%s.png"
         action [Return(),SetVariable("buttonstatus",True)]
 
     label title
