@@ -3,7 +3,7 @@
 ################################################################################
 
 init offset = -1
-
+define buttonstatus = True
 
 ################################################################################
 ## Styles
@@ -286,22 +286,17 @@ style quick_button_text:
 ## to other menus, and to start the game.
 
 screen navigation():
+    if buttonstatus:
+        use button_menu
 
-    vbox:
-        style_prefix "navigation"
-
-        xpos 1500
-        yalign 0.5
-        # gui.navigation_xpos
-        spacing gui.navigation_spacing
-
+screen button_menu():
     if main_menu:
 
-            imagebutton:
-                auto "imagebtn/StartButton_%s.png"
-                xalign 0.75
-                yalign 0.3
-                action Start()
+        imagebutton:
+            auto "imagebtn/StartButton_%s.png"
+            xalign 0.75
+            yalign 0.3
+            action Start()
 
     else:
 
@@ -310,16 +305,16 @@ screen navigation():
         textbutton _("Save") action ShowMenu("save")
 
     imagebutton:
-        auto "imagebtn/LoadButton_%s.png"
+        auto "imagebtn/LoadButton_%s.png" 
         xalign 0.7
         yalign 0.4
-        action ShowMenu("load")
+        action [ShowMenu("load"),SetVariable("buttonstatus",False)]
 
     imagebutton:
         auto "imagebtn/SettingButton_%s.png"
         xalign 0.8
         yalign 0.5
-        action ShowMenu("preferences")
+        action [ShowMenu("preferences"),SetVariable("buttonstatus",False)]
 
     if _in_replay:
 
@@ -338,7 +333,7 @@ screen navigation():
             auto "imagebtn/HelpButton_%s.png"
             xalign 0.7
             yalign 0.58
-            action ShowMenu("help")
+            action ShowMenu("help"),SetVariable("buttonstatus",False)
 
         if renpy.variant("pc"):
 
@@ -350,7 +345,6 @@ screen navigation():
                 xalign 0.8
                 yalign 0.65
                 action Quit(confirm=not main_menu)
-
 
 style navigation_button is gui_button
 style navigation_button_text is gui_button_text
@@ -492,7 +486,7 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
     textbutton _("Return"):
         style "return_button"
 
-        action Return()
+        action [Return(),SetVariable("buttonstatus",True)]
 
     label title
 
@@ -607,18 +601,15 @@ screen save():
 
 
 screen load():
-
     tag menu
 
     use file_slots(_("Load"))
 
 
 screen file_slots(title):
-
     default page_name_value = FilePageNameInputValue(pattern=_("Page {}"), auto=_("Automatic saves"), quick=_("Quick saves"))
 
     use game_menu(title):
-
         fixed:
 
             ## This ensures the input will get the enter event before any of the

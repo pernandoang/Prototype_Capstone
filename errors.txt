@@ -2,7 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 304: Indentation mismatch.
+File "game/screens.rpy", line 289: end of line expected.
+    use button_menu zorder 0
+                    ^
 
 Ren'Py Version: Ren'Py 8.3.0.24082114
-Thu Nov  7 10:11:13 2024
+Thu Nov  7 10:51:18 2024
