@@ -438,8 +438,8 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
         hbox:
 
             ## Reserve space for the navigation section.
-            frame:
-                style "game_menu_navigation_frame"
+            # frame:
+            #     style "game_menu_navigation_frame"
 
             frame:
                 style "game_menu_content_frame"
@@ -492,7 +492,8 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
         auto "imagebtn/ButtonReturn_%s.png"
         action [Return(),SetVariable("buttonstatus",True)]
 
-    label title
+    label title:
+        xalign 0.85
 
     if main_menu:
         key "game_menu" action ShowMenu("main_menu")
@@ -515,14 +516,14 @@ style game_menu_outer_frame:
     bottom_padding 45
     top_padding 180
 
-    background "gui/overlay/game_menu.png"
+    background "images/load_bg.png"
 
 style game_menu_navigation_frame:
     xsize 420
     yfill True
 
 style game_menu_content_frame:
-    left_margin 60
+    left_margin 200
     right_margin 30
     top_margin 15
 
@@ -546,7 +547,7 @@ style game_menu_label_text:
 
 style return_button:
     xpos gui.navigation_xpos
-    yalign 1.0
+    yalign 0.1
     yoffset -45
 
 
@@ -742,7 +743,7 @@ screen preferences():
 
     tag menu
 
-    use game_menu(_("Preferences"), scroll="viewport"):
+    use game_menu(_("Settings"), scroll="viewport"):
 
         vbox:
 

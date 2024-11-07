@@ -32,7 +32,7 @@ define gui.idle_color = '#707070'
 
 ## The small color is used for small text, which needs to be brighter/darker to
 ## achieve the same effect.
-define gui.idle_small_color = '#606060'
+define gui.idle_small_color = '#352921'
 
 ## The color that is used for buttons and bars that are hovered.
 define gui.hover_color = '#0099ff'
@@ -63,7 +63,7 @@ define gui.text_font = "DejaVuSans.ttf"
 define gui.name_text_font = "DejaVuSans.ttf"
 
 ## The font used for out-of-game text.
-define gui.interface_text_font = "DejaVuSans.ttf"
+define gui.interface_text_font = "fonts/Stanberry.ttf"
 
 ## The size of normal dialogue text.
 define gui.text_size = 33
