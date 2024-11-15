@@ -304,7 +304,7 @@ screen button_menu():
 
         textbutton _("Save") action ShowMenu("save")
 
-    imagebutton:
+    imagebutton: 
         auto "imagebtn/LoadButton_%s.png" 
         xalign 0.7
         yalign 0.4

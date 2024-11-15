@@ -10,7 +10,9 @@ label start:
 
 
 label prolog_pertama:
-    scene bg:
-        "#b16a00ff"
-    "M Nang" "Hallo"
+    scene room_mc
+    show larasati at left 
+    larasati "Hallo"
+    show ibusriyani at right with dissolve
+    ibusriyani "Hallooo...!"
     
