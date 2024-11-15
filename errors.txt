@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 495: label expects a non-empty block.
-    label title:
-                ^
+File "game/script.rpy", line 13: expected 'image_name_component' not found.
+    scene:
+         ^
 
 Ren'Py Version: Ren'Py 8.3.0.24082114
-Thu Nov  7 13:23:07 2024
+Fri Nov 15 19:24:18 2024

@@ -10,11 +10,7 @@ label start:
 
 
 label prolog_pertama:
-    scene envi_mom:
-        xsize 1920
-        ysize 1080
-    show larasati_ll at left:
-        xsize 600
-        ysize 750
-        yalign 0.5
-    larasati "[text_prolog_larasati[0]]"
+    scene bg:
+        "#b16a00ff"
+    "M Nang" "Hallo"
+    
